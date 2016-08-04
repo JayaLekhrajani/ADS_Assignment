@@ -1,6 +1,7 @@
 library(caret)
 library(ROCR)
 library(tree)
+credit<- read.csv("C:/Users/Abhijeet/Desktop/Midterm/MidtermSubmission/Question1/clean.csv") 
 
 colnames(credit) <- c("Index","ID","Limit","Sex", "Education", "Marriage", "Age", "Pay_1","Pay_2","Pay_3","Pay_4","Pay_5","Pay_6","Bill_1","Bill_2","Bill_3","Bill_4","Bill_5","Bill_6","Paid_1","Paid_2","Paid_3","Paid_4","Paid_5","Paid_6","Default payment")
 
