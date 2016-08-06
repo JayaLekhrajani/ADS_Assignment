@@ -167,7 +167,13 @@ namespace ADSTEAM1
                     region = "Midwest";
             }
             InvokeRequestResponseService().Wait();
-            this.output.Text = temp;
+         /*   this.output.Text = temp;
+          HTML Part:
+            <p>
+            Scored Label --> 
+            <asp:Label ID="output" runat="server" Text=""></asp:Label>
+            </p>
+            */
             this.outputsp.Text = temp1;
 
 

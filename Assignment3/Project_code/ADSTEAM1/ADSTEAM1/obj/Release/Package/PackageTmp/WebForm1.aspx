@@ -23,36 +23,24 @@ border-color : red;
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
+      					<div class="jumbotron">
+    					<h1>Telecom Customer Churn Model</h1> 		
+  					</div>
+  					<div class="row">
+  						<div class="col-sm-8"></div>
+  						<div class="col-sm-12" style="color:red;">Please fill up the fields below to obtain the prediction. * marked fields are mandatory.</div>
+  					</div>
     <form id="form1" runat="server">
 <div class="container-fluid">
-<div class="row">
-<div class="col-sm-8"  >
-  <h1><font color="red">ADS_Assignment3 : Will customer churn?</font></h1>
-  </div>
-  <div class="col-sm-4" >
 
-</div>
-</div>
-</div>
-
-<hr></hr>
-  <div class="container-fluid">
-  
-<h5>Please fill out this form completely. Wait after submit? may result in a processing delay</h5>
-</div>
- <div class="container-fluid">
- <h4 ><font color="red"><b> Input Parameters: 
-     <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-     </b> </font></h4>
      
-<hr>
+<hr/>
         <div class="row">
 
-<div class="col-sm-4"  >
-    <div class="form-group" role="form">
+<div class="col-xs-4 form-group"  >
       <label for="State">State:</label>
        
-                    <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                    <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
 <asp:ListItem>AL</asp:ListItem>
 <asp:ListItem>AK</asp:ListItem>
 <asp:ListItem>AZ</asp:ListItem>
@@ -106,126 +94,93 @@ border-color : red;
 <asp:ListItem>WY</asp:ListItem>
 
      </asp:DropDownList>
-    </div>
 	 </div>
-	<div class="col-sm-4"  >
-    <div class="form-group" role="form">
-      <label for="account length">account length:</label>
-       <asp:TextBox ID="TextBox2" type="number" min="0"  runat="server"></asp:TextBox>
+<div class="col-xs-4 form-group"  >
+      <label for="account length">*Account length:</label>
+       <asp:TextBox ID="TextBox2" type="number" min="0" max="10000" class="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server"
                     ControlToValidate="TextBox2"
                     ErrorMessage="AccountLength is a required field."
                     ForeColor="Red">
                     </asp:RequiredFieldValidator>
-	   </div>
     </div>
-	<div class="col-sm-4 >
-	 <div class="form-group" role="form">
-      <label for="area code">area code:</label>
-      <asp:TextBox ID="TextBox3" type="number" min="0"   runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server"
-                    ControlToValidate="TextBox3"
-                    ErrorMessage="AreaCode is a required field."
-                    ForeColor="Red">
-                    </asp:RequiredFieldValidator>
+<div class="col-xs-4 form-group"  >
+      <label for="area code">Area code:</label>
+      <asp:TextBox ID="TextBox3" type="number" min="0" max="10000" class="form-control" runat="server"></asp:TextBox>
     </div>
  </div>
-            </div>
 <div class="row">
-
-<div class="col-sm-4"  >
-    <div class="form-group" role="form">
+<div class="col-xs-4 form-group"  >
       <label for="phone number">Phone number:</label>
-      <asp:TextBox ID="TextBox4" type="number" min="0"  runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator id="RequiredFieldValidator4" runat="server"
-                    ControlToValidate="TextBox4"
-                    ErrorMessage="Phone number is a required field."
-                    ForeColor="Red">
-                    </asp:RequiredFieldValidator>
+      <asp:TextBox ID="TextBox4" type="number" min="0" max="9999999" class="form-control" runat="server"></asp:TextBox>
     </div>
-	 </div>
-	<div class="col-sm-4"  >
-    <div class="form-group" role="form">
+	<div class="col-xs-4 form-group"  >
+<div class="col-xs-6 form-group"  >
       <label for="international plan">International plan?</label>
+        </div>
+            <div class="col-xs-6 form-group"  >
 <asp:RadioButtonList ID="iPlan" runat="server">
     <asp:ListItem Text="yes" Value="yes" />
     <asp:ListItem Text="no" Value="no" Selected="True"  />
 </asp:RadioButtonList>
+                </div>
 	   </div>
-    </div>
-	<div class="col-sm-4 >
-	 <div class="form-group" role="form">
+<div class="col-xs-4 form-group"  >
+         <div class="col-xs-6 form-group"  >
       <label for="voice mail plan">Voice mail plan:</label>
+             </div>
+         <div class="col-xs-6 form-group"  >
      <asp:RadioButtonList ID="vmp" runat="server">
     <asp:ListItem Text="yes" Value="yes" />
     <asp:ListItem Text="no" Value="no" Selected="True"  />
 </asp:RadioButtonList>
+             </div>
     </div>
- </div>
-    </div>
+ </div>  
 <div class="row">
 
-<div class="col-sm-4"  >
-    <div class="form-group" role="form">
-      <label for="number vmail messages">Number vmail messages:</label>
-      <asp:TextBox ID="TextBox7" type="number" min="0" runat="server"></asp:TextBox>
+<div class="col-xs-4 form-group"  >
+      <label for="number vmail messages">*Number vmail messages:</label>
+      <asp:TextBox ID="TextBox7" type="number" min="0" max="10000" class="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator id="RequiredFieldValidator7" runat="server"
                     ControlToValidate="TextBox7"
                     ErrorMessage="Number vmail messages is a required field."
                     ForeColor="Red">
                     </asp:RequiredFieldValidator>
     </div>
-	 </div>
-	<div class="col-sm-4"  >
-    <div class="form-group" role="form">
+
+<div class="col-xs-4 form-group"  >
       <label for="total day minutes">Total day minutes:</label>
-      <asp:TextBox ID="TextBox8" type="number" min="0" step="0.01" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator id="RequiredFieldValidator8" runat="server"
-                    ControlToValidate="TextBox8"
-                    ErrorMessage="Total day minutes is a required field."
-                    ForeColor="Red">
-                    </asp:RequiredFieldValidator>
+      <asp:TextBox ID="TextBox8" type="number" min="0" step="0.01" max="10000" class="form-control" runat="server"></asp:TextBox>
 	   </div>
-    </div>
-	<div class="col-sm-4 >
-	 <div class="form-group" role="form">
-      <label for="total day calls">Total day calls:</label>
-      <asp:TextBox ID="TextBox9" type="number" min="0"  runat="server"></asp:TextBox>
+<div class="col-xs-4 form-group"  >
+      <label for="total day calls">*Total day calls:</label>
+      <asp:TextBox ID="TextBox9" type="number" min="0" max="10000" class="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator id="RequiredFieldValidator9" runat="server"
                     ControlToValidate="TextBox9"
                     ErrorMessage="Total day calls is a required field."
                     ForeColor="Red">
                     </asp:RequiredFieldValidator>
     </div>
- </div>
     </div>
-<div class="row">
 
-<div class="col-sm-4"  >
-    <div class="form-group" role="form">
-      <label for="total day charge">Total day charge:</label>
-      <asp:TextBox ID="TextBox10" type="number" min="0" step=".01" runat="server"></asp:TextBox>
+<div class="row">
+<div class="col-xs-4 form-group"  >
+      <label for="total day charge">*Total day charge:</label>
+      <asp:TextBox ID="TextBox10" type="number" min="0" step=".01" max="10000" class="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator id="RequiredFieldValidator10" runat="server"
                     ControlToValidate="TextBox10"
                     ErrorMessage="Total day charge is a required field."
                     ForeColor="Red">
                     </asp:RequiredFieldValidator>	
     </div>
-	 </div>
-	<div class="col-sm-4"  >
-    <div class="form-group" role="form">
+<div class="col-xs-4 form-group"  >
       <label for="total eve minutes">Total eve minutes:</label>
-       <asp:TextBox ID="TextBox11" type="number" min="0" step="0.01" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator id="RequiredFieldValidator11" runat="server"
-                    ControlToValidate="TextBox11"
-                    ErrorMessage="Total eve minutes is a required field."
-                    ForeColor="Red">
-                    </asp:RequiredFieldValidator>
+       <asp:TextBox ID="TextBox11" type="number" min="0" step="0.01" max="10000" class="form-control" runat="server"></asp:TextBox>
     </div>
-	<div class="col-sm-4 >
-	 <div class="form-group" role="form">
-      <label for="total eve calls">Total eve calls:</label>
-      <asp:TextBox ID="TextBox12" type="number" min="0" runat="server"></asp:TextBox>
+<div class="col-xs-4 form-group"  >
+      <label for="total eve calls">*Total eve calls:</label>
+      <asp:TextBox ID="TextBox12" type="number" min="0" max="10000"  class="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator id="RequiredFieldValidator12" runat="server"
                     ControlToValidate="TextBox12"
                     ErrorMessage="Total eve calls is a required field."
@@ -233,35 +188,24 @@ border-color : red;
                     </asp:RequiredFieldValidator>
     </div>
  </div>
- </div>
 <div class="row">
 
-<div class="col-sm-4"  >
-    <div class="form-group" role="form">
-      <label for="total eve charge">Total eve charge:</label>
-      <asp:TextBox ID="TextBox13" type="number" min="0" step="0.01" runat="server"></asp:TextBox>
+<div class="col-xs-4 form-group"  >
+      <label for="total eve charge">*Total eve charge:</label>
+      <asp:TextBox ID="TextBox13" type="number" min="0" max="10000" step="0.01" class="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator id="RequiredFieldValidator13" runat="server"
                     ControlToValidate="TextBox13"
                     ErrorMessage="Total eve charge is a required field."
                     ForeColor="Red">
                     </asp:RequiredFieldValidator>
     </div>
-	 </div>
-	<div class="col-sm-4"  >
-    <div class="form-group" role="form">
+<div class="col-xs-4 form-group"  >
       <label for="total night minutes">Total night minutes:</label>
-       <asp:TextBox ID="TextBox14" type="number" min="0" step="0.01" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator id="RequiredFieldValidator14" runat="server"
-                    ControlToValidate="TextBox14"
-                    ErrorMessage="Total night minutes is a required field."
-                    ForeColor="Red">
-                    </asp:RequiredFieldValidator>
+       <asp:TextBox ID="TextBox14" type="number" min="0" max="10000" step="0.01" class="form-control" runat="server"></asp:TextBox>
 	   </div>
-    </div>
-	<div class="col-sm-4 >
-	 <div class="form-group" role="form">
-      <label for="total night calls">Total night calls:</label>
-      <asp:TextBox ID="TextBox15"  type="number" min="0" runat="server"></asp:TextBox>
+ <div class="col-xs-4 form-group"  >
+      <label for="total night calls">*Total night calls:</label>
+      <asp:TextBox ID="TextBox15"  type="number" min="0" max="10000" class="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator id="RequiredFieldValidator15" runat="server"
                     ControlToValidate="TextBox15"
                     ErrorMessage="Total night calls is a required field."
@@ -273,32 +217,22 @@ border-color : red;
 
 <div class="row">
 
-<div class="col-sm-4"  >
-    <div class="form-group" role="form">
-      <label for="total night charge">Total night charge:</label>
-      <asp:TextBox ID="TextBox16" type="number" min="0" step="0.01" runat="server"></asp:TextBox>
+<div class="col-xs-4 form-group"  >
+      <label for="total night charge">*Total night charge:</label>
+      <asp:TextBox ID="TextBox16" type="number" min="0" max="10000" step="0.01" class="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator id="RequiredFieldValidator16" runat="server"
                     ControlToValidate="TextBox16"
                     ErrorMessage="Total night charge is a required field."
                     ForeColor="Red">
                     </asp:RequiredFieldValidator>
     </div>
-	 </div>
-	<div class="col-sm-4"  >
-    <div class="form-group" role="form">
+<div class="col-xs-4 form-group"  >
       <label for="total intl minutes">Total intl minutes:</label>
-      <asp:TextBox ID="TextBox17"  type="number" min="0" step="0.01" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator id="RequiredFieldValidator17" runat="server"
-                    ControlToValidate="TextBox17"
-                    ErrorMessage="Total intl minutes is a required field."
-                    ForeColor="Red">
-                    </asp:RequiredFieldValidator>
+      <asp:TextBox ID="TextBox17"  type="number" min="0" max="10000" step="0.01" class="form-control" runat="server"></asp:TextBox>
 	   </div>
-    </div>
-	<div class="col-sm-4 >
-	 <div class="form-group" role="form">
-      <label for="total intl calls">Total intl calls:</label>
-      <asp:TextBox ID="TextBox18" type="number" min="0"  runat="server"></asp:TextBox>
+<div class="col-xs-4 form-group"  >
+      <label for="total intl calls">*Total intl calls:</label>
+      <asp:TextBox ID="TextBox18" type="number" min="0" max="10000" class="form-control"  runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator id="RequiredFieldValidator18" runat="server"
                     ControlToValidate="TextBox18"
                     ErrorMessage="Total intl calls is a required field."
@@ -312,8 +246,8 @@ border-color : red;
 
 <div class="col-sm-4"  >
     <div class="form-group" role="form">
-      <label for="total intl charge">Total intl charge:</label>
-      <asp:TextBox ID="TextBox19" type="number" min="0" step="0.01" runat="server"></asp:TextBox>
+      <label for="total intl charge">*Total intl charge:</label>
+      <asp:TextBox ID="TextBox19" type="number" min="0" max="10000" step="0.01" class="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator id="RequiredFieldValidator19" runat="server"
                     ControlToValidate="TextBox19"
                     ErrorMessage="Total intl charge is a required field."
@@ -323,8 +257,8 @@ border-color : red;
 	 </div>
 	<div class="col-sm-4"  >
     <div class="form-group" role="form">
-      <label for="number customer service calls">Number customer service calls:</label>
-      <asp:TextBox ID="TextBox20" type="number" min="0" runat="server"></asp:TextBox>
+      <label for="number customer service calls">*Number customer service calls:</label>
+      <asp:TextBox ID="TextBox20" type="number" min="0" max="10000" class="form-control" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator id="RequiredFieldValidator20" runat="server"
                     ControlToValidate="TextBox20"
                     ErrorMessage="Number customer service calls is a required field."
@@ -334,14 +268,8 @@ border-color : red;
     </div>
 
   
- </div>
-   <div class="container-fluid">
-  
-<h5>Please hit submit and wait for result.</h5>
-</div>
-
-
-    
+ </div>    
+     
     <div>
     
         <p>
@@ -350,21 +278,27 @@ border-color : red;
             &nbsp;</p>
         <p>
        
-        <asp:Button ID="btnOK" runat="server" OnClick="Button1_Click" Text="Submit" />
+        <asp:Button ID="btnOK" runat="server" class="btn btn-primary btn-lg btn-block" OnClick="Button1_Click" Text="Predict Churn" />
+
         </p>
-        <p>
-            Scored Label --> 
-            <asp:Label ID="output" runat="server" Text=""></asp:Label>
-            </p>
+        <hr/>
+
         <p>
             &nbsp;</p>
-          <p>
-            Scored Probabilities --> 
-            <asp:Label ID="outputsp" runat="server" Text=""></asp:Label>
-            </p>
+          <div class="row">
+            <div class="col-xs-2">Probability:</div> 
+            <div class="col-xs-10" style="color:red;">
+                <asp:Label ID="outputsp" runat="server" Text=""></asp:Label>
+            </div>
+           </div>
           <p>
             &nbsp;</p>
+        <hr/>
     </div>
     </form>
+
+    <form id="form2" >
+
+        </form>
 </body>
 </html>
