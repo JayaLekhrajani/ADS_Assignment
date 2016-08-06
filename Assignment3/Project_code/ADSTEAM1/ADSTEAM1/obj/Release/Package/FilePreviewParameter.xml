@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="ADSTEAM1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Abhijeet\\Documents\\Visual\ Studio\ 2015\\Projects\\ADSTEAM1\\ADSTEAM1\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Abhijeet\\Documents\\Visual\ Studio\ 2015\\Projects\\ADSTEAM1\\ADSTEAM1\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-ADSTEAM1-20160804041202.mdf;Initial Catalog=aspnet-ADSTEAM1-20160804041202;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="c:\\users\\abhijeet\\documents\\visual\ studio\ 2015\\Projects\\ADSTEAM1\\ADSTEAM1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>
